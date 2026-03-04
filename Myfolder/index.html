@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Kamaal - Premium Somali E-commerce Store for Electronics, Fashion, Accessories & Home Products. Fast delivery, secure payments, quality guaranteed."/>
+  <meta name="keywords" content="Kamaal, Somali e-commerce, electronics Somalia, fashion Somalia, online shopping Somalia"/>
+  <meta name="author" content="Kamaal"/>
+  <meta name="theme-color" content="#2563eb"/>
+  
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="Kamaal | Premium Somali E-commerce"/>
+  <meta property="og:description" content="Shop electronics, fashion, accessories & home products with fast delivery across Somalia"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200"/>
+  
+  <title>Kamaal | Premium Somali E-commerce Store</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ===== CSS VARIABLES - BRAND COLOR SYSTEM ===== */
+    :root {
+      /* Primary Brand Colors from KM Logo */
+      --primary-blue: #2563eb;
+      --primary-blue-dark: #1d4ed8;
+      --primary-blue-light: #3b82f6;
+      
+      /* Secondary & Accent */
+      --secondary-white: #ffffff;
+      --accent-gray: #f8fafc;
+      --accent-gray-dark: #e2e8f0;
+      
+      /* CTA Highlight Color - Electric Cyan for conversions */
+      --cta-cyan: #06b6d4;
+      --cta-cyan-hover: #0891b2;
+      
+      /* Neutral Colors */
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+      
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--cta-cyan));
+      --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      --gradient-overlay: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(6, 182, 212, 0.85));
+      
+      /* Spacing & Layout */
+      --container-width: 1280px;
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+      --border-radius-full: 9999px;
+      
+      /* Transitions */
+      --transition-fast: 150ms ease;
+      --transition-normal: 300ms ease;
+      --transition-slow: 500ms ease;
+    }
+    
+    /* ===== BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--secondary-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.75em;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-fast);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-title h2 {
+      font-size: 2.25rem;
+      color: var(--text-primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.75rem;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--text-secondary);
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* ===== UTILITY CLASSES ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--border-radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all var(--transition-normal);
+      gap: 0.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: var(--secondary-white);
+      color: var(--primary-blue);
+      border: 2px solid var(--primary-blue);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary-blue);
+      color: white;
+    }
+    
+    .btn-cta {
+      background: var(--cta-cyan);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4);
+    }
+    
+    .btn-cta:hover {
+      background: var(--cta-cyan-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.6);
+    }
+    
+    .badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--cta-cyan);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--border-radius-full);
+      z-index: 2;
+    }
+    
+    .glass-card {
+      background: var(--gradient-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-glass);
+    }
+    
+    .text-gradient {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Background Image Utilities */
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+    
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-overlay);
+      z-index: 0;
+      opacity: 0.92;
+    }
+    
+    .bg-overlay-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(248,250,252,0.95));
+      z-index: 0;
+    }
+    
+    .bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 0;
+      opacity: 0.6;
+    }
+    
+    /* ===== HEADER & NAVIGATION ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+    
+    .header.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-primary);
+      border-radius: var(--border-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-primary);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-blue);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+      transition: width var(--transition-normal);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .nav-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      position: relative;
+      transition: all var(--transition-fast);
+    }
+    
+    .nav-icon-btn:hover {
+      background: var(--accent-gray);
+      color: var(--primary-blue);
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--cta-cyan);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: var(--border-radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+    }
+    
+    /* ===== HERO SECTION WITH BACKGROUND ===== */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80') center/cover no-repeat;
+      z-index: 0;
+      opacity: 0.15;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-overlay);
+      z-index: 0;
+      opacity: 0.93;
+    }
+    
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: white;
+    }
+    
+    .hero-text p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-radius: var(--border-radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: white;
+      display: block;
+    }
+    
+    .stat-label {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+    
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-badge {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius-full);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      animation: float 3s ease-in-out infinite;
+      z-index: 2;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .hero-img-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+      transition: transform var(--transition-slow);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .hero-img-container:hover {
+      transform: perspective(1000px) rotateY(0) rotateX(0);
+    }
+    
+    .hero-img-container img {
+      width: 100%;
+      height: 100%;
+      transition: transform var(--transition-slow);
+    }
+    
+    .hero-img-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* ===== CATEGORIES SECTION WITH BACKGROUND ===== */
+    .categories {
+      background: var(--secondary-white);
+      position: relative;
+    }
+    
+    .categories::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80') center/cover no-repeat;
+      opacity: 0.03;
+      z-index: 0;
+    }
+    
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .category-card {
+      background: var(--secondary-white);
+      border-radius: var(--border-radius-md);
+      padding: 1.75rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-normal);
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .category-image {
+      width: 100%;
+      height: 140px;
+      border-radius: var(--border-radius-sm);
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      transition: transform var(--transition-normal);
+    }
+    
+    .category-card:hover .category-image img {
+      transform: scale(1.1);
+    }
+    
+    .category-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    /* ===== FEATURED PRODUCTS WITH BACKGROUND ===== */
+    .featured {
+      position: relative;
+      background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(226,232,240,0.95));
+    }
+    
+    .featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80') center/cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .product-card {
+      background: var(--secondary-white);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .product-image {
+      position: relative;
+      padding-top: 100%;
+      overflow: hidden;
+      background: var(--accent-gray);
+    }
+    
+    .product-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform var(--transition-slow);
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+    
+    .product-actions {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all var(--transition-normal);
+      z-index: 2;
+    }
+    
+    .product-card:hover .product-actions {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .action-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--border-radius-full);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-fast);
+    }
+    
+    .action-btn:hover {
+      background: var(--primary-blue);
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .action-btn.wishlist.active {
+      color: #ef4444;
+    }
+    
+    .product-info {
+      padding: 1.25rem;
+    }
+    
+    .product-category {
+      font-size: 0.85rem;
+      color: var(--primary-blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+    
+    .price-current {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .price-original {
+      color: var(--text-light);
+      text-decoration: line-through;
+      font-size: 0.95rem;
+    }
+    
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #f59e0b;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .add-to-cart {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--gradient-primary);
+      color: white;
+      border-radius: var(--border-radius-sm);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all var(--transition-fast);
+    }
+    
+    .add-to-cart:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    
+    /* ===== TESTIMONIALS WITH BACKGROUND ===== */
+    .testimonials {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') center/cover no-repeat;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: all var(--transition-normal);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-blue-light);
+    }
+    
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--border-radius-full);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .testimonial-author h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .testimonial-author p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .testimonial-rating {
+      color: #f59e0b;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-text {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    
+    /* ===== NEWSLETTER WITH BACKGROUND ===== */
+    .newsletter-section {
+      position: relative;
+      padding: 0;
+    }
+    
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1557683311-eac922347aa1?w=1920&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+    
+    .newsletter-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-overlay);
+      z-index: 0;
+      opacity: 0.94;
+    }
+    
+    .newsletter {
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: var(--border-radius-lg);
+      margin: 3rem auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .newsletter h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter p {
+      opacity: 0.95;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border-radius: var(--border-radius-full);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-primary);
+    }
+    
+    .newsletter-input::placeholder {
+      color: var(--text-secondary);
+    }
+    
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      background: white;
+      color: var(--primary-blue);
+      border-radius: var(--border-radius-full);
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      border: 2px solid white;
+    }
+    
+    .newsletter-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      background: var(--cta-cyan);
+      color: white;
+      border-color: var(--cta-cyan);
+    }
+    
+    /* ===== FOOTER WITH BACKGROUND ===== */
+    .footer {
+      position: relative;
+      color: rgba(255, 255, 255, 0.85);
+      padding-top: 4rem;
+      background: var(--text-primary);
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80') center/cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    
+    .footer-brand p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-full);
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      color: white;
+    }
+    
+    .social-link:hover {
+      background: var(--primary-blue);
+      transform: translateY(-3px);
+    }
+    
+    .footer-title {
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--cta-cyan);
+      border-radius: 2px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      transition: all var(--transition-fast);
+      opacity: 0.85;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    
+    .footer-links a:hover {
+      color: var(--cta-cyan);
+      opacity: 1;
+      transform: translateX(4px);
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+    
+    .footer-contact-icon {
+      color: var(--cta-cyan);
+      font-size: 1.1rem;
+      margin-top: 4px;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: var(--border-radius-full);
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all var(--transition-normal);
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      animation: none;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .hero-text p,
+      .hero-buttons {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .hero-stats {
+        justify-content: center;
+      }
+      
+      .hero-image {
+        order: -1;
+        margin-bottom: 2rem;
+      }
+      
+      .hero-img-container {
+        max-width: 400px;
+        transform: perspective(1000px) rotateY(0) rotateX(0);
+      }
+      
+      .modal-content {
+        grid-template-columns: 1fr;
+        max-height: 95vh;
+      }
+      
+      .modal-images {
+        padding: 1.5rem;
+      }
+      
+      .modal-details {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        transition: left var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+        z-index: 999;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-actions {
+        gap: 0.5rem;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero {
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+        min-height: auto;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero-stats {
+        flex-wrap: wrap;
+      }
+      
+      .section {
+        padding: 3.5rem 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.75rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-brand .logo {
+        justify-content: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-contact-item {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.5rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.25rem;
+      }
+      
+      .product-info {
+        padding: 1rem;
+      }
+      
+      .product-title {
+        font-size: 1rem;
+      }
+      
+      .price-current {
+        font-size: 1.1rem;
+      }
+      
+      .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+      }
+      
+      .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+      
+      .hero-badge {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+    
+    /* ===== LOADING STATE ===== */
+    .skeleton {
+      background: linear-gradient(90deg, var(--accent-gray) 25%, var(--accent-gray-dark) 50%, var(--accent-gray) 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+      border-radius: var(--border-radius-sm);
+    }
+    
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    /* ===== IMAGE LAZY LOADING ===== */
+    .img-loading {
+      background: linear-gradient(90deg, var(--accent-gray) 25%, var(--accent-gray-dark) 50%, var(--accent-gray) 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <div class="logo-icon">KM</div>
+          <span>Kamaal</span>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="nav-icon-btn" aria-label="Wishlist">
+            <i class="fas fa-heart"></i>
+          </button>
+          <button class="nav-icon-btn" aria-label="Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+          </button>
+          <button class="nav-icon-btn" aria-label="Account">
+            <i class="fas fa-user"></i>
+          </button>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION WITH BACKGROUND ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text animate">
+          <h1>Premium Shopping Experience <span class="text-gradient">Made for Somalia</span></h1>
+          <p>Discover electronics, fashion, accessories & home products with fast delivery, secure payments, and exceptional quality guaranteed.</p>
+          <div class="hero-buttons">
+            <a href="#featured" class="btn btn-cta">
+              <i class="fas fa-shopping-bag"></i> Shop Now
+            </a>
+            <a href="#categories" class="btn btn-secondary">
+              Explore Categories
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">500+</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">24h</span>
+              <span class="stat-label">Delivery</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4.9/5</span>
+              <span class="stat-label">Rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image animate animate-delay-1">
+          <div class="hero-badge">
+            <i class="fas fa-bolt"></i> New Collection
+          </div>
+          <div class="hero-img-container">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" 
+                 alt="Premium wireless earbuds and tech accessories"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/2563eb/ffffff?text=Kamaal+Premium'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES SECTION WITH BACKGROUND ===== -->
+  <section class="section categories" id="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Shop by Category</h2>
+        <p>Explore our curated collections designed for the modern Somali lifestyle</p>
+      </div>
+      
+      <div class="categories-grid">
+        <!-- Electronics Category -->
+        <div class="category-card animate">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop" 
+                 alt="Electronics - Smartphones, laptops, gadgets"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x300/2563eb/ffffff?text=Electronics'">
+          </div>
+          <h3>Electronics</h3>
+          <p>Smartphones, laptops, accessories & more</p>
+        </div>
+        
+        <!-- Fashion Category -->
+        <div class="category-card animate animate-delay-1">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1445205170232-277528bb6b73?w=400&h=300&fit=crop" 
+                 alt="Fashion - Trendy clothing and apparel"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x300/2563eb/ffffff?text=Fashion'">
+          </div>
+          <h3>Fashion</h3>
+          <p>Trendy clothing for men, women & children</p>
+        </div>
+        
+        <!-- Accessories Category -->
+        <div class="category-card animate animate-delay-2">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" 
+                 alt="Accessories - Watches, bags, jewelry"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x300/2563eb/ffffff?text=Accessories'">
+          </div>
+          <h3>Accessories</h3>
+          <p>Watches, bags, jewelry & lifestyle items</p>
+        </div>
+        
+        <!-- Home Products Category -->
+        <div class="category-card animate animate-delay-3">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1556906893-2d8fe7b1f5f0?w=400&h=300&fit=crop" 
+                 alt="Home Products - Decor, kitchenware, essentials"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x300/2563eb/ffffff?text=Home+Products'">
+          </div>
+          <h3>Home Products</h3>
+          <p>Decor, kitchenware & home essentials</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS WITH BACKGROUND ===== -->
+  <section class="section featured" id="featured">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Products</h2>
+        <p>Handpicked premium items with exceptional quality and value</p>
+      </div>
+      
+      <div class="products-grid">
+        <!-- Product Card 1: Wireless Earbuds -->
+        <div class="product-card animate">
+          <span class="badge">New</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=400&fit=crop" 
+                 alt="Premium Wireless Earbuds Pro"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x400/f1f5f9/2563eb?text=Earbuds+Pro'">
+            <div class="product-actions">
+              <button class="action-btn wishlist" aria-label="Add to wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="action-btn" aria-label="Quick view" onclick="openProductModal()">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Electronics</span>
+            <h3 class="product-title">Premium Wireless Earbuds Pro</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(128)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$89.99</span>
+              <span class="price-original">$129.99</span>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        
+        <!-- Product Card 2: Leather Handbag -->
+        <div class="product-card animate animate-delay-1">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop" 
+                 alt="Designer Leather Handbag"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x400/f1f5f9/2563eb?text=Leather+Bag'">
+            <div class="product-actions">
+              <button class="action-btn wishlist active" aria-label="In wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn" aria-label="Quick view" onclick="openProductModal()">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Fashion</span>
+            <h3 class="product-title">Designer Leather Handbag</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(94)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$149.99</span>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        
+        <!-- Product Card 3: Smart Watch -->
+        <div class="product-card animate animate-delay-2">
+          <span class="badge" style="background: #ef4444;">Sale</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop" 
+                 alt="Smart Watch Series 5"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x400/f1f5f9/2563eb?text=Smart+Watch'">
+            <div class="product-actions">
+              <button class="action-btn wishlist" aria-label="Add to wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="action-btn" aria-label="Quick view" onclick="openProductModal()">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Electronics</span>
+            <h3 class="product-title">Smart Watch Series 5</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(76)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$199.99</span>
+              <span class="price-original">$249.99</span>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        
+        <!-- Product Card 4: Home Decor Set -->
+        <div class="product-card animate animate-delay-3">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556906893-2d8fe7b1f5f0?w=400&h=400&fit=crop" 
+                 alt="Premium Home Decor Set"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/400x400/f1f5f9/2563eb?text=Home+Decor'">
+            <div class="product-actions">
+              <button class="action-btn wishlist" aria-label="Add to wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="action-btn" aria-label="Quick view" onclick="openProductModal()">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Home</span>
+            <h3 class="product-title">Premium Home Decor Set</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(215)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$79.99</span>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#" class="btn btn-secondary">
+          View All Products <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS WITH BACKGROUND ===== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>Trusted by thousands of happy customers across Somalia</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-author">
+              <h4>Amina Hassan</h4>
+              <p>Mogadishu</p>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Kamaal delivered my order in just 18 hours! The quality of the electronics exceeded my expectations. Will definitely shop here again."</p>
+        </div>
+        
+        <div class="testimonial-card animate animate-delay-1">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">M</div>
+            <div class="testimonial-author">
+              <h4>Mohamed Ali</h4>
+              <p>Hargeisa</p>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">"The fashion collection is amazing! I love how they combine modern styles with Somali cultural elements. Customer service is top-notch."</p>
+        </div>
+        
+        <div class="testimonial-card animate animate-delay-2">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">F</div>
+            <div class="testimonial-author">
+              <h4>Fatima Omar</h4>
+              <p>Bosaso</p>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Finally an e-commerce platform that understands Somali customers! Easy checkout, secure payments, and beautiful packaging. Highly recommended!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER WITH BACKGROUND ===== -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter glass-card animate">
+        <h3>Join Our Community</h3>
+        <p>Subscribe to get exclusive offers, early access to sales, and new product alerts.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER WITH BACKGROUND ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">KM</div>
+            <span>Kamaal</span>
+          </a>
+          <p>Premium Somali e-commerce platform delivering quality products with trust, speed, and exceptional customer service across Somalia and beyond.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-group">
+          <h4 class="footer-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Special Offers</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-group">
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-group">
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone footer-contact-icon"></i>
+            <span>+252 618 930 320</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope footer-contact-icon"></i>
+            <span>kaamiin498@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+            <span>Mogadishu, Somalia</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock footer-contact-icon"></i>
+            <span>Mon-Sat: 9AM - 9PM EAT</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kamaal. All rights reserved. | Premium Somali E-commerce Platform</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="https://wa.me/252618930320" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== PRODUCT DETAILS MODAL ===== -->
+  <div class="modal" id="productModal">
+    <button class="modal-close" onclick="closeProductModal()" aria-label="Close modal">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-content">
+      <div class="modal-images">
+        <div class="modal-main-image">
+          <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600&h=400&fit=crop" 
+               alt="Premium Wireless Earbuds Pro - Main View"
+               onerror="this.src='https://placehold.co/600x400/f1f5f9/2563eb?text=Product+Image'">
+        </div>
+        <div class="modal-thumbnails">
+          <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=100&h=100&fit=crop" 
+               alt="Thumbnail 1" class="active"
+               onerror="this.src='https://placehold.co/100x100/f1f5f9/2563eb?text=1'">
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=100&h=100&fit=crop" 
+               alt="Thumbnail 2"
+               onerror="this.src='https://placehold.co/100x100/f1f5f9/2563eb?text=2'">
+          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&h=100&fit=crop" 
+               alt="Thumbnail 3"
+               onerror="this.src='https://placehold.co/100x100/f1f5f9/2563eb?text=3'">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop" 
+               alt="Thumbnail 4"
+               onerror="this.src='https://placehold.co/100x100/f1f5f9/2563eb?text=4'">
+        </div>
+      </div>
+      <div class="modal-details">
+        <span class="modal-category">Electronics</span>
+        <h3 class="modal-title">Premium Wireless Earbuds Pro</h3>
+        <div class="modal-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span style="color: var(--text-secondary); margin-left: 0.5rem;">(128 reviews)</span>
+        </div>
+        <div class="modal-price">$89.99 <span style="font-size: 1rem; color: var(--text-light); text-decoration: line-through; font-weight: 400; margin-left: 0.5rem;">$129.99</span></div>
+        <p class="modal-description">Experience premium sound quality with our wireless earbuds featuring active noise cancellation, 30-hour battery life, and crystal-clear calls. Designed for comfort and durability with IPX7 water resistance.</p>
+        
+        <div class="quantity-selector">
+          <span>Quantity:</span>
+          <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+          <span class="quantity-value" id="quantity">1</span>
+          <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn btn-cta" style="flex: 1;">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+          <button class="btn btn-secondary" style="flex: 1;">
+            <i class="far fa-heart"></i> Wishlist
+          </button>
+        </div>
+        
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            <i class="fas fa-shield-alt" style="color: var(--cta-cyan); margin-right: 0.5rem;"></i>
+            Secure payment • 30-day returns • 1-year warranty
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT FUNCTIONALITY ===== -->
+  <script>
+    // ===== MOBILE MENU TOGGLE =====
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.querySelector('i').classList.remove('fa-times');
+        mobileToggle.querySelector('i').classList.add('fa-bars');
+      });
+    });
+    
+    // ===== HEADER SCROLL EFFECT =====
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // ===== PRODUCT MODAL FUNCTIONS =====
+    function openProductModal() {
+      document.getElementById('productModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('productModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('productModal')) {
+        closeProductModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.getElementById('productModal').classList.contains('active')) {
+        closeProductModal();
+      }
+    });
+    
+    // ===== QUANTITY SELECTOR =====
+    function updateQuantity(change) {
+      const quantityElement = document.getElementById('quantity');
+      let quantity = parseInt(quantityElement.textContent);
+      quantity = Math.max(1, quantity + change);
+      quantityElement.textContent = quantity;
+    }
+    
+    // ===== WISHLIST TOGGLE =====
+    document.querySelectorAll('.wishlist').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (this.classList.contains('active')) {
+          icon.classList.remove('far');
+          icon.classList.add('fas');
+          icon.style.color = '#ef4444';
+        } else {
+          icon.classList.remove('fas');
+          icon.classList.add('far');
+          icon.style.color = '';
+        }
+      });
+    });
+    
+    // ===== ANIMATION ON SCROLL =====
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+    
+    // ===== ADD TO CART ANIMATION =====
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Added!';
+        this.style.background = '#10b981';
+        
+        // Update cart count
+        const cartCount = document.querySelector('.cart-count');
+        cartCount.textContent = parseInt(cartCount.textContent) + 1;
+        
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.style.background = '';
+        }, 2000);
+      });
+    });
+    
+    // ===== SMART SEARCH (Placeholder) =====
+    document.querySelector('.nav-icon-btn[aria-label="Search"]').addEventListener('click', function() {
+      const searchTerm = prompt('Search products...');
+      if (searchTerm) {
+        alert(`Searching for: "${searchTerm}"\n\nIn a production environment, this would connect to your product database with filters, categories, and smart suggestions.`);
+      }
+    });
+    
+    // ===== NEWSLETTER FORM =====
+    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      alert(`Thank you for subscribing!\n\nWe'll send exclusive offers to: ${email}\n\nIn production, this would connect to your email marketing platform.`);
+      this.reset();
+    });
+    
+    // ===== MODAL THUMBNAIL SWITCHING =====
+    document.querySelectorAll('.modal-thumbnails img').forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        // Remove active class from all thumbnails
+        document.querySelectorAll('.modal-thumbnails img').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked thumbnail
+        this.classList.add('active');
+        // Update main image
+        const mainImg = document.querySelector('.modal-main-image img');
+        const newSrc = this.src.replace('w=100&h=100', 'w=600&h=400');
+        mainImg.src = newSrc;
+      });
+    });
+    
+    // ===== PRELOAD CRITICAL IMAGES =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Trigger header scroll effect on load if needed
+      if (window.scrollY > 50) {
+        document.querySelector('.header').classList.add('scrolled');
+      }
+      
+      // Preload critical background images
+      const criticalBackgrounds = [
+        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80',
+        'https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80',
+        'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80'
+      ];
+      
+      criticalBackgrounds.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+  </script>
+</body>
+</html>
